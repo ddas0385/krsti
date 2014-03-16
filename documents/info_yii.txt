@@ -1,0 +1,15 @@
+*Creating an webapp in yii
+yii/framework/yiic webapp [webapp name with path]
+
+*Removing date() warning
+[webapp]/protected/views/layouts/main.php
+add the following line before invocation of the date() function
+<?php date_default_timezone_set("Asia/Kolkata"); ?>
+
+*Enabling gii
+[webapp]/protected/config/main.php
+uncomment the lines for gii module and provide a password to enable the Gii tool
+
+*Enabling mysql server
+[webapp]/protected/config/main.php
+uncomment the lines for mysql module and provide authentication credentials to enable mysql

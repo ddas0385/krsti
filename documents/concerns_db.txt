@@ -1,0 +1,4 @@
+User IDs generated for user_master are limited by BIGINT(20).
+UserIDs and Role_IDs in role_hierarchy and user_role should be considered while manipulating user_master and role_master.
+Create user_shadow table.
+Add created_by to all the tables.
