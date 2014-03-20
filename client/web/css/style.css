@@ -6,6 +6,77 @@ html, body
 
 body
 {
-	background-color: #FF8080;
+	background-color: #FFFFFF;
 }
 
+header
+{
+    background-color: #9DC209; /*Change*/
+	color: #FFFFFF; /*Change*/
+	height: 50px;
+	text-align: center;
+}
+
+#divLogo
+{
+    width: 20%;
+    float: left;
+}
+
+#divUserControls
+{
+    width: 30%;
+    float: right;
+}
+
+#divName
+{
+    width: 50%;
+    margin: 0 auto;
+    
+    font-size: 32pt; /*Change*/
+    font-weight: bolder; /*Change*/
+}
+
+section
+{
+    border-top: #777777 2px groove; /*Change*/
+}
+
+#divControls
+{
+    width: 20%;
+    float: left;
+    text-align: center;
+    white-space: nowrap;
+    display: none;
+}
+
+#divOverview
+{
+    width: 20%;
+    float: right;   
+}
+
+#divContent
+{
+    margin: 0 auto;
+}
+
+/*Change*/
+#divControlsHeader
+{
+    background-color: #FFA500;
+    color: #FFFFFF;
+    font-size: 16pt; 
+    font-weight: bolder;
+}
+
+
+.controlGroups
+{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    
+}
