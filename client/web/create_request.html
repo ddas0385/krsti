@@ -60,16 +60,28 @@
 
             </footer>
         </div>
-        <script type="text/x-handlebars" id="tool">
+        <script type="text/x-handlebars" id="toolGroup">
             <div id="divControlsHeader">
                 Controls
                 <ul>
-                {{#each tool in controller}}
-                    <li>{{tool.name}} - {{tool.type}}</li>
+                {{#each toolGroup in controller}}
+                    <li>
+                        <div>
+                            {{toolGroup.name}}
+                            <ul>
+                                {{#each toolGroup.tools}}
+                                <li>
+                                    {{name}}
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </li>
+                {{else}}
+                    <li>No Tool Groups</li>    
                 {{/each}}
                 </ul>
             </div>
         </script>
     </body>
 </html>
-

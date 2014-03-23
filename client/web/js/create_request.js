@@ -4,72 +4,74 @@ window.CreateRequest = Ember.Application.create({
 
 CreateRequest.ApplicationAdapter = DS.FixtureAdapter.extend();
 
-CreateRequest.Tool = DS.Model.extend({
+CreateRequest.ToolGroup = DS.Model.extend({
     name : DS.attr('string'),
-    type : DS.attr('string')
-    //tool : DS.hasMany('tool')
+    tools : DS.hasMany('tool', {async:true})
 });
 
-/*CreateRequest.Tool = DS.Model.extend({
-    id : DS.attr(),
-    name : DS.attr()
-    //toolGroup : DS.belongsTo('toolGroup')
-});*/
+CreateRequest.Tool = DS.Model.extend({
+    name : DS.attr('string'),
+    toolGroup : DS.belongsTo('toolGroup')
+});
 
-CreateRequest.Tool.FIXTURES = [
-{
-    id: '1',
-    name: 'Inputs',
-    type: 'Type1'
-},
-{
-    id: '2',
-    name: 'Labels',
-    type: 'Type2'    
-},
-{
-    id: '3',
-    name: 'Media',
-    type: 'Type3'
-},
-{
-    id: '4',
-    name: 'Custom',
-    type: 'Type4'
-}
-];
-
-/*CreateRequest.Tool.FIXTURES = [
+CreateRequest.ToolGroup.FIXTURES = [
 {
     id: 1,
-    name: 'CheckboxList',
-    toolGroup: ToolGroup.find('toolGroup', 1)
+    name: 'Inputs',
+    tools: [1,2]
 },
 {
     id: 2,
-    name: 'RadioButtonList',
-    toolGroup: ToolGroup.find('toolGroup', 1)
+    name: 'Labels',
+    tools: [3]   
 },
 {
     id: 3,
-    name: 'Label',
-    toolGroup: ToolGroup.find('toolGroup', 2)
+    name: 'Media',
+    tools: [4]
 },
 {
     id: 4,
-    name: 'Audio',
-    toolGroup: store.find('toolGroup', 3)
+    name: 'Custom'
+}
+];
+
+CreateRequest.Tool.FIXTURES = [
+{
+    id: 1,
+    name: 'CheckboxList'
 },
-];*/
+{
+    id: 2,
+    name: 'RadioButtonList'
+},
+{
+    id: 3,
+    name: 'Label'
+},
+{
+    id: 4,
+    name: 'Audio'
+}
+];
 
 CreateRequest.Router.map(function(){
-  this.resource('tool', {path: '/'}, function() {
+  this.resource('toolGroup', {path: '/'}, function() {
+      //this.resource('tool', {path: '/'}, function(){});
   });
 });
 
 
+CreateRequest.ToolGroupRoute = Ember.Route.extend({
+    model: function(){
+        return this.store.find('toolGroup');
+    }
+});
+
+/*
 CreateRequest.ToolRoute = Ember.Route.extend({
     model: function(){
         return this.store.find('tool');
     }
 });
+*/
