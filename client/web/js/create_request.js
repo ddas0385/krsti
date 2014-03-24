@@ -57,10 +57,8 @@ CreateRequest.Tool.FIXTURES = [
 
 CreateRequest.Router.map(function(){
   this.resource('toolGroup', {path: '/'}, function() {
-      //this.resource('tool', {path: '/'}, function(){});
   });
 });
-
 
 CreateRequest.ToolGroupRoute = Ember.Route.extend({
     model: function(){
@@ -68,10 +66,9 @@ CreateRequest.ToolGroupRoute = Ember.Route.extend({
     }
 });
 
-/*
-CreateRequest.ToolRoute = Ember.Route.extend({
-    model: function(){
-        return this.store.find('tool');
-    }
+CreateRequest.ToggleTool = Ember.View.extend({
+   click: function(e){
+       var li = e.target.parentElement.parentElement;
+       $('.divTool', li).animate({ height: 'toggle' });
+   } 
 });
-*/

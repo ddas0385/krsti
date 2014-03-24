@@ -66,16 +66,22 @@
                 <ul>
                 {{#each toolGroup in controller}}
                     <li>
-                        <div>
-                            {{toolGroup.name}}
+                        {{#view CreateRequest.ToggleTool}}
+                            <span>{{toolGroup.name}}</span>
+                        {{/view}}
+                        <div class="divTool">
                             <ul>
                                 {{#each toolGroup.tools}}
                                 <li>
                                     {{name}}
                                 </li>
+                                {{else}}
+                                <li>
+                                    No Tools
+                                </li>
                                 {{/each}}
                             </ul>
-                        </div>
+                        </div>    
                     </li>
                 {{else}}
                     <li>No Tool Groups</li>    

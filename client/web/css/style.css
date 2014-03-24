@@ -11,8 +11,8 @@ body
 
 header
 {
-    background-color: #9DC209; /*Change*/
-	color: #FFFFFF; /*Change*/
+    background-color: #9DC209;
+	color: #FFFFFF;
 	height: 50px;
 	text-align: center;
 }
@@ -34,13 +34,13 @@ header
     width: 50%;
     margin: 0 auto;
     
-    font-size: 32pt; /*Change*/
-    font-weight: bolder; /*Change*/
+    font-size: 32pt;
+    font-weight: bolder;
 }
 
 section
 {
-    border-top: #777777 2px groove; /*Change*/
+    border-top: #777777 2px groove;
 }
 
 #divControls
@@ -63,7 +63,6 @@ section
     margin: 0 auto;
 }
 
-/*Change*/
 #divControlsHeader
 {
     background-color: #FFA500;
@@ -72,11 +71,9 @@ section
     font-weight: bolder;
 }
 
-
-.controlGroups
+.divTool
 {
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    
+    background-color: #0000FF;
+    color: #FFFFFF;
+    display: none
 }
